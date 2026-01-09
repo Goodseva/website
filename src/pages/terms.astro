@@ -1,0 +1,166 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import Container from '../components/ui/Container.astro';
+---
+
+<BaseLayout
+  title="Terms of Service - Goodseva"
+  description="Terms of service for Goodseva logistics platform. Read our terms and conditions for using the platform."
+>
+  <Header />
+
+  <main class="pt-24 pb-20 bg-white">
+    <Container>
+      <div class="max-w-4xl mx-auto prose prose-lg">
+        <h1 class="text-4xl font-bold text-gray-900 mb-4">Terms of Service</h1>
+        <p class="text-gray-600 mb-8">Last updated: {new Date().toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4">1. Acceptance of Terms</h2>
+          <p class="text-gray-700">
+            By accessing and using Goodseva, you accept and agree to be bound by these Terms of Service.
+            If you do not agree to these terms, please do not use our platform.
+          </p>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4">2. Platform Services</h2>
+          <p class="text-gray-700">
+            Goodseva provides a marketplace platform connecting shippers with carriers for transportation services.
+            We facilitate bidding, payment processing, and trip tracking but are not directly involved in the transportation services.
+          </p>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4">3. User Accounts</h2>
+          <ul class="list-disc pl-6 text-gray-700 space-y-2">
+            <li>You must provide accurate and complete information when registering</li>
+            <li>You are responsible for maintaining account security</li>
+            <li>You must be at least 18 years old to use the platform</li>
+            <li>One account per user/business entity</li>
+            <li>You may not transfer your account to another party</li>
+          </ul>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4">4. Platform Fees</h2>
+          <p class="text-gray-700 mb-4">
+            Goodseva charges a 15% platform fee on successful transactions. This fee covers:
+          </p>
+          <ul class="list-disc pl-6 text-gray-700 space-y-2">
+            <li>Platform usage and maintenance</li>
+            <li>Payment processing and escrow services</li>
+            <li>Customer support</li>
+            <li>Technology infrastructure</li>
+          </ul>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4">5. Bidding and Payments</h2>
+          <ul class="list-disc pl-6 text-gray-700 space-y-2">
+            <li>All bids are binding once accepted by the shipper</li>
+            <li>Payments are held in escrow until delivery confirmation</li>
+            <li>Platform fees are deducted before payment to carriers</li>
+            <li>Payment disputes must be reported within 48 hours of delivery</li>
+            <li>Refunds are processed according to our refund policy</li>
+          </ul>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4">6. User Responsibilities</h2>
+          <p class="text-gray-700 mb-4">Shippers must:</p>
+          <ul class="list-disc pl-6 text-gray-700 space-y-2">
+            <li>Provide accurate load information</li>
+            <li>Ensure cargo is properly packaged</li>
+            <li>Have necessary permits and documentation</li>
+            <li>Release payment upon successful delivery</li>
+          </ul>
+          <p class="text-gray-700 mt-6 mb-4">Carriers must:</p>
+          <ul class="list-disc pl-6 text-gray-700 space-y-2">
+            <li>Have valid licenses and insurance</li>
+            <li>Maintain vehicles in good condition</li>
+            <li>Provide accurate GPS tracking</li>
+            <li>Deliver cargo safely and on time</li>
+          </ul>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4">7. Prohibited Activities</h2>
+          <p class="text-gray-700 mb-4">Users must not:</p>
+          <ul class="list-disc pl-6 text-gray-700 space-y-2">
+            <li>Provide false or misleading information</li>
+            <li>Engage in fraudulent activities</li>
+            <li>Circumvent platform fees</li>
+            <li>Transport illegal or prohibited items</li>
+            <li>Harass or discriminate against other users</li>
+            <li>Interfere with platform operations</li>
+          </ul>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4">8. Limitation of Liability</h2>
+          <p class="text-gray-700">
+            Goodseva is a platform provider and is not liable for:
+          </p>
+          <ul class="list-disc pl-6 text-gray-700 space-y-2">
+            <li>Quality, safety, or legality of cargo</li>
+            <li>Accuracy of user-provided information</li>
+            <li>Actions or omissions of shippers or carriers</li>
+            <li>Loss, damage, or delays in transportation</li>
+            <li>Disputes between users</li>
+          </ul>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4">9. Termination</h2>
+          <p class="text-gray-700">
+            We reserve the right to suspend or terminate accounts for violations of these terms,
+            fraudulent activity, or any reason at our discretion. Users may close accounts at any time
+            after settling all pending transactions.
+          </p>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4">10. Changes to Terms</h2>
+          <p class="text-gray-700">
+            We may update these terms from time to time. Continued use of the platform after changes
+            constitutes acceptance of the new terms.
+          </p>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4">11. Governing Law</h2>
+          <p class="text-gray-700">
+            These terms are governed by the laws of India. Any disputes will be resolved in the courts of [Jurisdiction].
+          </p>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4">12. Contact</h2>
+          <p class="text-gray-700">
+            For questions about these terms, contact us at:
+          </p>
+          <p class="text-gray-700 mt-2">
+            Email: legal@goodseva.com<br />
+            Address: [Company Address]
+          </p>
+        </section>
+      </div>
+    </Container>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .prose h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .prose p {
+    margin-bottom: 1rem;
+  }
+</style>

@@ -1,0 +1,183 @@
+---
+import {
+  FileText,
+  DollarSign,
+  MapPinned,
+  CheckCircle2,
+  Search,
+  Gavel,
+  Package,
+  Wallet,
+} from 'lucide-astro';
+import Container from '../ui/Container.astro';
+import Card from '../ui/Card.astro';
+---
+
+<section id="how-it-works" class="py-20 bg-white">
+  <Container>
+    <!-- Section Header -->
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+        How It Works
+      </h2>
+      <p class="text-lg text-gray-600">
+        Simple process for both shippers and carriers
+      </p>
+    </div>
+
+    <!-- Two Columns: Shippers and Carriers -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <!-- For Shippers -->
+      <div>
+        <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center lg:text-left">
+          For Shippers
+        </h3>
+        <div class="space-y-6">
+          <!-- Step 1 -->
+          <Card hover={false}>
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                <FileText class="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-gray-900 mb-1">
+                  1. Post Your Load
+                </h4>
+                <p class="text-gray-600">
+                  Enter pickup/delivery locations, cargo details, and pricing preferences
+                </p>
+              </div>
+            </div>
+          </Card>
+
+          <!-- Step 2 -->
+          <Card hover={false}>
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                <DollarSign class="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-gray-900 mb-1">
+                  2. Receive Bids
+                </h4>
+                <p class="text-gray-600">
+                  Get competitive bids from nearby carriers within 2 hours
+                </p>
+              </div>
+            </div>
+          </Card>
+
+          <!-- Step 3 -->
+          <Card hover={false}>
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                <MapPinned class="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-gray-900 mb-1">
+                  3. Accept & Track
+                </h4>
+                <p class="text-gray-600">
+                  Accept the best bid and track your shipment in real-time via GPS
+                </p>
+              </div>
+            </div>
+          </Card>
+
+          <!-- Step 4 -->
+          <Card hover={false}>
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-success-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                <CheckCircle2 class="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-gray-900 mb-1">
+                  4. Delivery & Payment
+                </h4>
+                <p class="text-gray-600">
+                  Confirm delivery and release payment securely through escrow
+                </p>
+              </div>
+            </div>
+          </Card>
+        </div>
+      </div>
+
+      <!-- For Carriers -->
+      <div>
+        <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center lg:text-left">
+          For Carriers
+        </h3>
+        <div class="space-y-6">
+          <!-- Step 1 -->
+          <Card hover={false}>
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-cyan-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                <Search class="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-gray-900 mb-1">
+                  1. Find Loads
+                </h4>
+                <p class="text-gray-600">
+                  Browse available loads nearby with advanced filters
+                </p>
+              </div>
+            </div>
+          </Card>
+
+          <!-- Step 2 -->
+          <Card hover={false}>
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-cyan-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                <Gavel class="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-gray-900 mb-1">
+                  2. Place Bid
+                </h4>
+                <p class="text-gray-600">
+                  Submit your competitive bid with price and conditions
+                </p>
+              </div>
+            </div>
+          </Card>
+
+          <!-- Step 3 -->
+          <Card hover={false}>
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-cyan-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                <Package class="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-gray-900 mb-1">
+                  3. Get Assigned
+                </h4>
+                <p class="text-gray-600">
+                  Win the bid, get assigned, and receive pickup details
+                </p>
+              </div>
+            </div>
+          </Card>
+
+          <!-- Step 4 -->
+          <Card hover={false}>
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-success-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                <Wallet class="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-gray-900 mb-1">
+                  4. Complete & Get Paid
+                </h4>
+                <p class="text-gray-600">
+                  Complete delivery and receive payment within 24 hours
+                </p>
+              </div>
+            </div>
+          </Card>
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>

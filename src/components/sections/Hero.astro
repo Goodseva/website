@@ -1,0 +1,69 @@
+---
+import { ArrowRight, TrendingUp } from 'lucide-astro';
+import Container from '../ui/Container.astro';
+import Button from '../ui/Button.astro';
+import Badge from '../ui/Badge.astro';
+import { APP_URLS, STATS } from '../../utils/constants';
+---
+
+<section class="relative pt-32 pb-20 bg-gradient-to-br from-primary-50 via-white to-blue-50 overflow-hidden">
+  <!-- Background Decorations -->
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute top-20 left-10 w-72 h-72 bg-primary-600 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-20 right-10 w-96 h-96 bg-cyan-500 rounded-full blur-3xl"></div>
+  </div>
+
+  <Container class="relative z-10">
+    <div class="max-w-4xl mx-auto text-center space-y-8">
+      <!-- Badge -->
+      <div class="flex justify-center animate-[fadeIn_0.6s_ease-out]">
+        <Badge variant="primary" class="flex items-center gap-2">
+          <TrendingUp class="w-4 h-4" />
+          India's Modern Logistics Platform
+        </Badge>
+      </div>
+
+      <!-- Headline -->
+      <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight animate-[slideUp_0.6s_ease-out]">
+        Connect Shippers with Carriers.
+        <span class="bg-gradient-to-r from-primary-600 to-cyan-600 bg-clip-text text-transparent">
+          Seamlessly.
+        </span>
+      </h1>
+
+      <!-- Subheadline -->
+      <p class="text-xl sm:text-2xl text-gray-600 max-w-3xl mx-auto animate-[slideUp_0.6s_ease-out_0.1s_both]">
+        Real-time bidding, GPS tracking, and secure payments for the Indian transportation industry
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 animate-[slideUp_0.6s_ease-out_0.2s_both]">
+        <Button href={APP_URLS.REGISTER} variant="primary" size="lg" class="w-full sm:w-auto">
+          Get Started
+          <ArrowRight class="w-5 h-5 ml-2" />
+        </Button>
+        <Button href="#features" variant="secondary" size="lg" class="w-full sm:w-auto">
+          Learn More
+        </Button>
+      </div>
+
+      <!-- Trust Badges -->
+      <div class="flex flex-wrap items-center justify-center gap-6 pt-8 text-sm font-medium text-gray-600 animate-[fadeIn_0.6s_ease-out_0.3s_both]">
+        <div class="flex items-center gap-2">
+          <div class="w-2 h-2 bg-success-500 rounded-full"></div>
+          {STATS.TOTAL_SHIPPERS} Shippers
+        </div>
+        <div class="w-1 h-4 bg-gray-300"></div>
+        <div class="flex items-center gap-2">
+          <div class="w-2 h-2 bg-success-500 rounded-full"></div>
+          {STATS.TOTAL_CARRIERS} Carriers
+        </div>
+        <div class="w-1 h-4 bg-gray-300"></div>
+        <div class="flex items-center gap-2">
+          <div class="w-2 h-2 bg-success-500 rounded-full"></div>
+          {STATS.UPTIME} Uptime
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>

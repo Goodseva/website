@@ -1,0 +1,79 @@
+---
+import {
+  Building2,
+  Truck,
+  Package,
+  UserCircle,
+  CheckCircle,
+} from 'lucide-astro';
+import Container from '../ui/Container.astro';
+import Card from '../ui/Card.astro';
+import Button from '../ui/Button.astro';
+import { USER_TYPES } from '../../utils/constants';
+
+// Icon mapping
+const iconMap: Record<string, any> = {
+  Building2,
+  Truck,
+  Package,
+  UserCircle,
+};
+---
+
+<section id="user-types" class="py-20 bg-gray-50">
+  <Container>
+    <!-- Section Header -->
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+        Built for Everyone in Logistics
+      </h2>
+      <p class="text-lg text-gray-600">
+        Tailored solutions for shippers and carriers of all sizes
+      </p>
+    </div>
+
+    <!-- User Types Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {USER_TYPES.map((userType) => {
+        const Icon = iconMap[userType.icon];
+        return (
+          <Card>
+            <div class="space-y-6">
+              <!-- Icon & Title -->
+              <div class="flex items-start gap-4">
+                <div class="w-14 h-14 bg-gradient-to-br from-primary-600 to-cyan-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <Icon class="w-7 h-7 text-white" />
+                </div>
+                <div>
+                  <h3 class="text-2xl font-bold text-gray-900">
+                    {userType.title}
+                  </h3>
+                  <p class="text-gray-600 mt-1">
+                    {userType.description}
+                  </p>
+                </div>
+              </div>
+
+              <!-- Benefits -->
+              <ul class="space-y-3">
+                {userType.benefits.map((benefit) => (
+                  <li class="flex items-start gap-3">
+                    <CheckCircle class="w-5 h-5 text-success-500 flex-shrink-0 mt-0.5" />
+                    <span class="text-gray-700">{benefit}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <!-- CTA -->
+              <div class="pt-4">
+                <Button href={userType.cta} variant="primary" size="md" class="w-full">
+                  Get Started as {userType.title}
+                </Button>
+              </div>
+            </div>
+          </Card>
+        );
+      })}
+    </div>
+  </Container>
+</section>

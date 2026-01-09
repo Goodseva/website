@@ -1,0 +1,67 @@
+---
+import { ShieldCheck, Award, Headphones, Lock, MapPin } from 'lucide-astro';
+import Container from '../ui/Container.astro';
+import { STATS, CITIES, TRUST_BADGES } from '../../utils/constants';
+
+const iconMap: Record<string, any> = {
+  ShieldCheck,
+  Award,
+  Headphones,
+  Lock,
+};
+---
+
+<section class="py-20 bg-gradient-to-br from-primary-600 to-cyan-600 text-white">
+  <Container>
+    <!-- Stats Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+      <div class="text-center">
+        <div class="text-4xl font-bold mb-2">{STATS.TOTAL_SHIPPERS}</div>
+        <div class="text-primary-100">Active Shippers</div>
+      </div>
+      <div class="text-center">
+        <div class="text-4xl font-bold mb-2">{STATS.TOTAL_CARRIERS}</div>
+        <div class="text-primary-100">Active Carriers</div>
+      </div>
+      <div class="text-center">
+        <div class="text-4xl font-bold mb-2">{STATS.TRANSACTION_VALUE}</div>
+        <div class="text-primary-100">Transaction Value</div>
+      </div>
+      <div class="text-center">
+        <div class="text-4xl font-bold mb-2">{STATS.FULFILLMENT_RATE}</div>
+        <div class="text-primary-100">Fulfillment Rate</div>
+      </div>
+    </div>
+
+    <!-- Trust Badges -->
+    <div class="border-t border-primary-400 pt-12">
+      <h3 class="text-2xl font-bold text-center mb-8">Trusted & Secure Platform</h3>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        {TRUST_BADGES.map((badge) => {
+          const Icon = iconMap[badge.icon];
+          return (
+            <div class="flex flex-col items-center text-center">
+              <div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center mb-3">
+                <Icon class="w-6 h-6" />
+              </div>
+              <div class="text-sm font-medium">{badge.label}</div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+
+    <!-- Geographic Coverage -->
+    <div class="border-t border-primary-400 pt-12 mt-12">
+      <div class="flex flex-col md:flex-row items-center justify-center gap-4 text-center md:text-left">
+        <MapPin class="w-8 h-8" />
+        <div>
+          <div class="font-semibold mb-1">Currently serving:</div>
+          <div class="text-primary-100">
+            {CITIES.join(' • ')} • Expanding to {STATS.EXPANDING_TO} cities
+          </div>
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>

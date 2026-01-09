@@ -1,0 +1,64 @@
+---
+import {
+  Gavel,
+  MapPin,
+  Shield,
+  Users,
+  Target,
+  BarChart3,
+} from 'lucide-astro';
+import Container from '../ui/Container.astro';
+import Card from '../ui/Card.astro';
+import { FEATURES } from '../../utils/constants';
+
+// Icon mapping
+const iconMap: Record<string, any> = {
+  Gavel,
+  MapPin,
+  Shield,
+  Users,
+  Target,
+  BarChart3,
+};
+---
+
+<section id="features" class="py-20 bg-white">
+  <Container>
+    <!-- Section Header -->
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+        Powerful Features for Modern Logistics
+      </h2>
+      <p class="text-lg text-gray-600">
+        Everything you need to manage your transportation operations efficiently
+      </p>
+    </div>
+
+    <!-- Features Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {FEATURES.map((feature) => {
+        const Icon = iconMap[feature.icon];
+        return (
+          <Card>
+            <div class="space-y-4">
+              <!-- Icon -->
+              <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
+                <Icon class="w-6 h-6 text-primary-600" />
+              </div>
+
+              <!-- Title -->
+              <h3 class="text-xl font-semibold text-gray-900">
+                {feature.title}
+              </h3>
+
+              <!-- Description -->
+              <p class="text-gray-600">
+                {feature.description}
+              </p>
+            </div>
+          </Card>
+        );
+      })}
+    </div>
+  </Container>
+</section>

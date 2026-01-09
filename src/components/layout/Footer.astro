@@ -1,0 +1,90 @@
+---
+import { Twitter, Linkedin, Facebook, Instagram } from 'lucide-astro';
+import Container from '../ui/Container.astro';
+import { FOOTER_LINKS, SOCIAL_LINKS } from '../../utils/constants';
+---
+
+<footer class="bg-gray-900 text-gray-300">
+  <Container class="py-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <!-- Brand Section -->
+      <div class="space-y-4">
+        <div class="flex items-center space-x-3">
+          <img
+            src="/logo.png"
+            alt="Goodseva Logo"
+            class="w-10 h-10 object-contain"
+          />
+          <span class="text-xl font-bold text-white tracking-wide font-display">
+            GOODSEVA
+          </span>
+        </div>
+        <p class="text-sm text-gray-400">
+          Connecting shippers with carriers for efficient transport management across India.
+        </p>
+        <!-- Social Media -->
+        <div class="flex items-center space-x-4 pt-2">
+          <a href={SOCIAL_LINKS.TWITTER} class="hover:text-primary-500 transition-colors" aria-label="Twitter">
+            <Twitter class="w-5 h-5" />
+          </a>
+          <a href={SOCIAL_LINKS.LINKEDIN} class="hover:text-primary-500 transition-colors" aria-label="LinkedIn">
+            <Linkedin class="w-5 h-5" />
+          </a>
+          <a href={SOCIAL_LINKS.FACEBOOK} class="hover:text-primary-500 transition-colors" aria-label="Facebook">
+            <Facebook class="w-5 h-5" />
+          </a>
+          <a href={SOCIAL_LINKS.INSTAGRAM} class="hover:text-primary-500 transition-colors" aria-label="Instagram">
+            <Instagram class="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+
+      <!-- Product Links -->
+      <div>
+        <h3 class="text-white font-semibold mb-4">Product</h3>
+        <ul class="space-y-2">
+          {FOOTER_LINKS.product.map((link) => (
+            <li>
+              <a href={link.href} class="text-sm hover:text-primary-500 transition-colors">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Company Links -->
+      <div>
+        <h3 class="text-white font-semibold mb-4">Company</h3>
+        <ul class="space-y-2">
+          {FOOTER_LINKS.company.map((link) => (
+            <li>
+              <a href={link.href} class="text-sm hover:text-primary-500 transition-colors">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Legal Links -->
+      <div>
+        <h3 class="text-white font-semibold mb-4">Legal</h3>
+        <ul class="space-y-2">
+          {FOOTER_LINKS.legal.map((link) => (
+            <li>
+              <a href={link.href} class="text-sm hover:text-primary-500 transition-colors">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="mt-12 pt-8 border-t border-gray-800 text-center text-sm text-gray-400">
+      <p>&copy; {new Date().getFullYear()} Goodseva. All rights reserved.</p>
+    </div>
+  </Container>
+</footer>
